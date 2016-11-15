@@ -229,3 +229,159 @@ Output
 1 2 3
 ```
 
+### Task 7 - Bring on the math
+
+A [binary relation over the set A](https://en.wikipedia.org/wiki/Binary_relation) is any subset of AxA.
+You should've already learned that in your course of Discrete Mathematics. Binary relations can be
+*reflexive*, *symmetrical* and *transitive*. Relations that are reflexive, symmetrical and transitive
+at the same time are called *equivalence* relations. Your task is to tell, given a relation,
+whether that relation posseses any of these properties.
+
+The relations in your task are binary relations over A = [0, n) - the set of all
+natural numbers less than `n` where `n` is given on the console. Your relation
+will consist of a set of pairs R = { (x, y) | 0 <= x < n & 0 <= y < n}. The number of pairs
+|R| will also be given on the console.
+
+**Input**
+
+The first line contains a single number `n`. This number determines the range `A = [0, n)` over
+which we'll consider the relation.
+
+The second line contains a single number - |R| - the number of pairs in the relation
+
+Each of the next |R| lines will contain 2 numbers (x, y) - the elements of the pair.
+
+**Output**
+
+On the first line output the text "Reflexive? ", followed by a 1 if the relation is reflexive
+and 0 otherwise.
+
+On the second line output the text "Symmetrical? ", followed by a 1 if the relation is symmetrical
+and 0 otherwise.
+
+On the third line output the text "Transitive? ", followed by a 1 if the relation is transitive
+and 0 otherwise.
+
+On the forth line output the text "equivalence? ", followed by a 1 if the relation is an
+equivalence relation and 0 otherwise.
+
+**Example**
+
+Here are 4 examples:
+
+Input
+
+```
+5
+8
+1 1
+1 2
+2 1
+2 4
+1 3
+2 3
+1 4
+2 2
+```
+
+Output
+
+```
+Reflexive? 0
+Symmetrical? 0
+Transitive? 1
+Equivalence? 0
+```
+
+Explanation: the relation is a subset of [0, 5)x[0, 5) and contains the elements
+R = {(1, 1), (1, 2), (2, 1), (2, 4), (1, 3), (2, 3), (1, 4), (2, 2)}, |R| = 8.
+The relation is not reflexive because (0, 0), (3,3) and (4,4) are not in R.
+The relation is not symmetrical because at the minimum (4, 2) is not in R.
+
+------------
+
+Input
+
+```
+3
+7
+0 0
+1 1
+2 2
+0 1
+1 0
+1 2
+2 1
+```
+
+Output
+
+```
+Reflexive? 1
+Symmetrical? 1
+Transitive? 0
+Equivalence? 0
+```
+
+Explanation: R is not transitive because (0, 2) is not in R but it should be since
+(0, 1) and (1, 2) are in R
+
+-----------
+
+Input
+
+```
+8
+7
+1 2
+2 1
+5 5
+8 9
+9 8
+1 6
+6 1
+```
+
+Output
+
+```
+Reflexive? 0
+Symmetrical? 1
+Transitive? 0
+Equivalence? 0
+```
+
+-----------
+
+Input
+
+```
+5
+17
+1 2
+2 1
+1 1
+3 4
+3 3
+1 3
+1 4
+2 3
+2 4
+4 3
+4 1
+4 2
+4 4
+2 2
+0 0
+3 1
+3 2
+```
+
+Output
+
+```
+Reflexive? 1
+Symmetrical? 1
+Transitive? 1
+Equivalence? 1
+```
